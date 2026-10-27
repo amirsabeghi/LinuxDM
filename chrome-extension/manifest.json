@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "LinuxDM \u2014 Download with LinuxDM",
+  "version": "0.5.0",
+  "description": "Capture downloads and send streaming video pages to LinuxDM named queues.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1D8JuKNsbR9IXtZ/6+4/VS3Bh+MMt3PHV2R4AND1seIh0BQxGI0563J14l+rspLKHuzstD4vGb4DVikXh4Psb9HsvddnBNgq8YwyncvdIUmrsAS46pEvmrTBDg7Bv6bkZdX6nuOSo5Y1Gqsjhu7AS7DINKuE8PkmN8LrRE+8+rO4+miWLjzBhTewo/CMZxhKTDStJV0U+AuNqYVonHibVBwzo8iR/exxqCO24wPHJksxETdZ53/QmyZzdv5NpyNXEp7Sha6xkMEVxP5BiNri9DAFnKvu+dmnuZJtiKXEut7To+NpfvCpFPNERqjlVvTlftqO5Irv2VsTjTUM5v9JPwIDAQAB",
+  "permissions": [
+    "contextMenus",
+    "nativeMessaging",
+    "storage",
+    "downloads",
+    "alarms",
+    "activeTab",
+    "webRequest"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "LinuxDM",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "detect.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinuxDM</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header><img src="icon48.png" alt="" width="36" height="36"><div><h1>LinuxDM</h1><p>Your downloads, handled.</p></div></header>
+  <p id="connection" role="status">Checking desktop connection…</p>
+  <label class="capture-setting" for="capture-enabled">
+    <span><strong>Use LinuxDM by default</strong><small>Automatically capture Chrome downloads</small></span>
+    <input id="capture-enabled" type="checkbox" role="switch">
+  </label>
+  <h2>Videos on this page</h2>
+  <div id="videos" aria-live="polite"><p>Looking for videos…</p></div>
+  <p id="result" role="status" aria-live="polite"></p>
+  <footer>You can also right-click a file link and choose <strong>Download with LinuxDM</strong>.</footer>
+  <details><summary>Setup &amp; supported links</summary>
+    <p>Install the desktop bridge once from your LinuxDM project folder:</p>
+    <code>python3 -m linuxdm.chrome_install</code>
+    <p>Play a video to detect its page or stream, then choose Download above. Video downloads use yt-dlp and FFmpeg on your computer. Choose a named queue and quality in the desktop dialog.</p>
+    <p>Browser cookies and signed-in sessions are not transferred. DRM-protected videos are not supported.</p>
+    <p>Automatic capture is on by default. LinuxDM takes over HTTP/HTTPS downloads after accepting them. If the handoff fails, the download stays in Chrome. Turn the switch off to use Chrome for a download.</p><p>Private downloads, browser-generated files (blob/data URLs), and downloads flagged by Chrome stay in Chrome. Session-dependent downloads may also need Chrome.</p>
+  </details>
+  <script src="popup.js"></script>
+</body>
+</html>

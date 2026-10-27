@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "LinuxDM \u2014 Download with LinuxDM",
+  "version": "0.5.0",
+  "description": "Capture downloads and send streaming video pages to LinuxDM named queues.",
+  "permissions": [
+    "contextMenus",
+    "nativeMessaging",
+    "storage",
+    "downloads",
+    "alarms",
+    "activeTab",
+    "webRequest"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "action": {
+    "default_title": "LinuxDM",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "detect.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "linuxdm@linuxdm.local",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  }
+}

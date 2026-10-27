@@ -1,0 +1,35 @@
+:root { color-scheme: dark; font: 12px/1.5 system-ui, sans-serif; color: #e9e7df; background: #17191d; }
+body { width: 320px; margin: 0; padding: 18px; }
+header { display: flex; align-items: center; gap: 10px; }
+h1 { font-size: 19px; margin: 0; letter-spacing: -.5px; }
+header p { margin: 0; color: #9b9fa8; }
+#connection { color: #e9bd55; padding: 5px 0; font-size: 11px; }
+label { display: block; font-size: 10px; font-weight: 600; letter-spacing: .5px; margin-bottom: 6px; color: #9b9fa8; }
+input, button { box-sizing: border-box; width: 100%; border-radius: 5px; font: inherit; }
+input { padding: 9px; border: 1px solid #34373d; background: #111316; color: #e9e7df; }
+input:focus-visible, button:focus-visible { outline: 2px solid #e9bd55; outline-offset: 2px; }
+button { border: 0; background: #e9bd55; color: #17191d; padding: 9px; margin-top: 10px; font-weight: 650; cursor: pointer; }
+button:hover { background: #f5cc70; }
+button:disabled { opacity: .6; cursor: wait; }
+#result { overflow-wrap: anywhere; font-size: 11px; }
+.error { color: #ed9292 !important; }
+footer, details { color: #9b9fa8; font-size: 11px; }
+footer { border-top: 1px solid #34373d; padding-top: 12px; }
+details { margin-top: 12px; }
+summary { cursor: pointer; }
+code { display: block; padding: 7px; background: #26292f; color: #e9bd55; border-radius: 5px; }
+.capture-setting { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #24262b; border: 1px solid #34373d; border-radius: 6px; padding: 10px; margin-bottom: 16px; letter-spacing: 0; }
+.capture-setting strong { font-size: 12px; color: #e9e7df; }
+.capture-setting small { display: block; font-weight: 400; font-size: 10px; margin-top: 2px; }
+.capture-setting input { width: 17px; height: 17px; margin: 0; accent-color: #e9bd55; cursor: pointer; }
+.type-label { margin-top: 10px; }
+select { box-sizing: border-box; width: 100%; padding: 7px; color: #e9e7df; background: #202328; border: 1px solid #34373d; border-radius: 5px; }
+button.secondary { color: #e9bd55; background: #26292f; border: 1px solid #5e5031; }
+button.secondary:hover { background: #353023; }
+
+h2 { font-size: 13px; margin-top: 18px; }
+#videos { max-height: 340px; overflow-y: auto; }
+.video-row { padding: 10px; border: 1px solid #34373d; border-radius: 8px; margin-bottom: 8px; }
+.video-row strong { display: block; font-size: 12px; overflow-wrap: anywhere; }
+.video-row small { display: block; color: #9b9fa8; margin-top: 5px; }
+.video-row button { margin-top: 8px; padding: 7px; }
